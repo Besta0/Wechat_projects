@@ -1,0 +1,16 @@
+<!--pages/relocate/relocate.wxml-->
+<view class="section" >
+    <picker mode="date" value="{{date1}}" start="2023-09" end="2030-09" bindchange="bindDateChange" fields="month">
+      <view class="picker">
+         {{date1}}
+      </view>
+    </picker>
+</view>
+
+<form bindsubmit="btnSub">
+  <text class="put">请输入预算:</text>
+  <input name="money" class="num_put" type="number" placeholder="金额" ></input>
+  <textarea name="remark" placeholder="备注"></textarea>
+  <button type="primary" form-type="submit" bind:tap="">提交</button>
+  <button form-type="reset">重置</button>
+</form>

@@ -1,0 +1,50 @@
+/* pages/pay/pay.wxss */
+.choice{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.tt:hover{
+  
+  font-size: 30rpx;
+  color:blue;
+}
+
+.img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.pay{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.te{
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 100rpx;
+}
+
+.picker{
+  display: flex;
+  padding:50rpx;
+  background-color: #ffffff;
+  font-size: 50rpx;
+  color: rgb(0, 0, 0);
+}
+.put{
+  font-size: 50rpx;
+}
+.num_put{
+  background-color: #ffffff;
+  width: 30%;
+}
+
+
+

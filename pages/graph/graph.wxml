@@ -1,0 +1,22 @@
+<!--pages/graph/graph.wxml-->
+<!-- <text>pages/graph/graph.wxml</text> -->
+<!-- 轮播图区域 -->
+<view class="swiper" >
+  <swiper autoplay="true"
+  interval="2000" 
+  indicator-dots="true" 
+  indicator-color="#fff"
+  indicator-active-color="#f3514f"
+  circular="true"
+  >
+    <swiper-item>
+    1
+    </swiper-item>
+    <swiper-item>
+    2
+    </swiper-item>
+    <swiper-item>
+    3
+    </swiper-item>
+  </swiper>
+</view>

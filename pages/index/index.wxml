@@ -1,0 +1,8 @@
+<!--pages/index/index.wxml-->
+<view class="indexContainer">
+  <image class="avatarUrl"src="/static/images/ToothBrush.jpg" mode=""/>
+  <text class="userName">{{msg}}</text>
+  <view class="gostudy" bind:tap="handleParent">
+    <text bind:tap="handleChild">hello world</text>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+{
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  },
+  "pages": [
+    "pages/detail/detail",
+    "pages/index/index",
+    "pages/graph/graph",
+    "pages/pay/pay",
+    "pages/message/message",
+    "pages/profile/profile",
+    "pages/relocate/relocate",
+    "pages/register/register"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#2CC2C3",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Bin",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#efefef",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "selectedColor": "#2CC2C3",
+    "color": "#666",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "明细",
+        "pagePath": "pages/detail/detail",
+        "iconPath": "/static/images/tabber/paylist.png",
+        "selectedIconPath": "/static/images/tabber/paylist_active.png"
+      },
+      {
+        "text": "图表",
+        "pagePath": "pages/graph/graph",
+        "iconPath": "/static/images/tabber/data.png",
+        "selectedIconPath": "/static/images/tabber/data_active.png"
+      },
+      {
+        "text": "记账",
+        "pagePath": "pages/pay/pay",
+        "iconPath": "/static/images/tabber/pay.png",
+        "selectedIconPath": "/static/images/tabber/pay_active.png"
+      },
+      {
+        "text": "月结",
+        "pagePath": "pages/message/message",
+        "iconPath": "/static/images/tabber/message.png",
+        "selectedIconPath": "/static/images/tabber/message_active.png"
+      },
+      {
+        "text": "个人设置",
+        "pagePath": "pages/profile/profile",
+        "iconPath": "/static/images/tabber/myhome.png",
+        "selectedIconPath": "/static/images/tabber/myhome_active.png"
+      }
+    ]
+  }
+}

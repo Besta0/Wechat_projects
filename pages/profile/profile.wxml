@@ -1,0 +1,21 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <view class="profile">
+    <view class="proleft">
+    <image src="{{path}}" style="height:100rpx;width:100rpx" class="pho" mode=""></image>
+    <view bind:tap="getUser">{{name}}</view>
+    </view>
+    <view class="proright">
+    <button>打卡</button>
+    </view>
+  </view>
+  <view class="address" bind:tap="getLocalPath">地址：{{address}}</view>
+  
+  <view class="section">
+    <navigator url="/pages/register/register"><button class="button">注册登录</button></navigator>
+    <button class="button" bindtap="goToSettings" >设置</button>
+    <button class="button" bindtap="goToHelp">使用帮助</button>
+    <button class="button" bindtap="goToFeedback">意见反馈</button>
+    <button class="button" bindtap="goToSecurityCenter">安全中心</button>
+  </view>
+</view>

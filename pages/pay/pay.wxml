@@ -1,0 +1,72 @@
+<!--pages/pay/pay.wxml-->
+<!-- <button type="primary" bind:tap="getData">click</button> -->
+<view class="choice">
+ <view class="tt" bind:tap="showPay">支出</view>
+ <view class="tt" bind:tap="showGet">收入</view>
+</view>
+
+<view class="pay" wx:if="{{choice==='0'}}">
+  <view class="item">
+    <image class="img" src="{{path0}}" bind:tap="onClickpic" data-ty="0"></image>
+    <view class class="te">餐饮</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path1}}" bind:tap="onClickpic" data-ty="1"></image>
+      <view class class="te">住宿</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path2}}" bind:tap="onClickpic" data-ty="2"></image>
+      <view class class="te">购物</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path3}}" bind:tap="onClickpic" data-ty="3"></image>
+      <view class class="te">交通</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path4}}" bind:tap="onClickpic" data-ty="4"></image>
+      <view class class="te">旅游</view>
+  </view>
+
+</view>
+<view class="pay" wx:else="{{choice==='1'}}">
+  <view class="item">
+    <image class="img" src="{{path00}}" bind:tap="onClickpic" data-ty="5"></image>
+    <view class class="te">理财</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path11}}" bind:tap="onClickpic" data-ty="6"></image>
+      <view class class="te">工资</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path22}}" bind:tap="onClickpic" data-ty="7"></image>
+      <view class class="te">兼职</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path33}}" bind:tap="onClickpic" data-ty="8"></image>
+      <view class class="te">礼金</view>
+  </view>
+  <view class="item">
+      <image class="img" src="{{path44}}" bind:tap="onClickpic" data-ty="9"></image>
+      <view class class="te">其他</view>
+  </view>
+</view>
+
+<view class="section" >
+  <view>日期：</view>
+    <picker mode="date" value="{{date1}}" start="2023-09" end="2030-09" bindchange="bindDateChange" fields="day">
+      <view class="picker">
+         {{date1}}
+      </view>
+    </picker>
+</view>
+<form bindsubmit="btnSub">
+  <text class="put">请输入详细信息:</text>
+  <input name="money" class="num_put" type="number" placeholder="金额" ></input>
+  <textarea name="remark" placeholder="备注"></textarea>
+  <button type="primary" form-type="submit" bind:tap="">提交</button>
+  <button form-type="reset">重置</button>
+</form>
+
+<navigator url="/pages/relocate/relocate" open-type="navigate">
+<button>预算设置</button>
+</navigator>

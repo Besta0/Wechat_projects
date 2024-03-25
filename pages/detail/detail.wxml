@@ -1,0 +1,36 @@
+<!--pages/detail/detail.wxml-->
+<view class="info">
+  <view class="section" >
+    <picker mode="date" value="{{date1}}" start="2023-09" end="2030-09" bindchange="bindDateChange" fields="month">
+      <view class="picker">
+         {{date1}}
+      </view>
+    </picker>
+  </view>
+   
+  <view class="pw">
+    <view class="item">
+      <text >收入：</text>
+      <view>{{get_money}}</view>
+    </view> 
+    <view class="item">
+      <text>支出：</text>
+      <view>{{pay_money}}</view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class wx:for="{{dataObj}}">
+  <view class="oneline">
+    <view class="olleft">
+    {{item.month}}月{{item.day}}日
+    </view>
+  </view>
+  <view class="twoline">
+    <view>{{item.remark}}</view>
+    <view wx:if="{{item.type=='收入'}}" bind:tap="backId" data-id="{{item._id}}"> +{{item.money}}</view>
+    <view wx:else="{{item.type=='支出'}}" bind:tap="backId" data-id="{{item._id}}"> -{{item.money}}</view>
+  </view>
+</view>

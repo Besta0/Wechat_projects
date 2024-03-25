@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="header">
+    <text class="title">月结表</text>
+  </view>
+  <view class="table">
+    <view class="row header-row">
+      <text class="header-cell">日期</text>
+      <text class="header-cell">收入</text>
+      <text class="header-cell">支出</text>
+      <text class="header-cell">余额</text>
+    </view>
+    <view class="row" wx:for="{{ records }}" wx:key="index">
+      <text class="cell">{{ item.date }}</text>
+      <text class="cell">{{ item.income }}</text>
+      <text class="cell">{{ item.expense }}</text>
+      <text class="cell">{{ item.balance }}</text>
+    </view>
+  </view>
+</view>
+<van-button type="danger">1
+</van-button>

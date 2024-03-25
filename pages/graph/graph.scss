@@ -1,0 +1,26 @@
+/* pages/graph/graph.wxss */
+page {
+  height: 100vh;
+  background-color: #efefef !important;
+}
+
+text {
+  color: aquamarine;
+}
+// 轮播图样式
+.swiper{
+  swiper{
+    height: 360rpx;
+    background-color: rgb(17, 97, 129);
+
+    swiper-item{
+      &:first-child{
+        background-color: slateblue;
+      }
+      &:last-child{
+        background-color: slategray;
+      }
+  }
+
+  }
+}
