@@ -1,5 +1,7 @@
-// pages/relocate/relocate.ts
+// pages/modify/modify.ts
+
 const db = wx.cloud.database();
+var app=getApp();
 
 Page({
 
@@ -7,30 +9,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date1:new Date().toISOString().substring(0, 7),
+    dataObj:'',
+    tmp:1,
+    monn1:'',
   },
-
-  bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value[0]+e.detail.value[1]+e.detail.value[2]+e.detail.value[3])
-    this.setData({
-      date1: e.detail.value
-    })
-  },
-
   btnSub(res){
-  
-    var year=this.data.date1[0]+this.data.date1[1]+this.data.date1[2]+this.data.date1[3];
-    var month=this.data.date1[5]+this.data.date1[6];
-    var user_id=app.globalData.user_id;
     var money=res.detail.value.money;
-    var remark=res.detail.value.remark;
-    db.collection("target_list").add({
+    console.log(money);
+    db.collection("bill").doc(this.data.dataObj._id).update({
       data:{
-        month:month,
-        year:year,
-        user_id:user_id,
-        money:money,
-        remark:remark
+        money:money
       }
     }).then(res=>{
       console.log(res);
@@ -39,11 +27,23 @@ Page({
       title: '成功',
     })
   },
+  btndel:function (e){
+    db.collection("bill").doc(this.data.dataObj._id).remove({
+    }).then(res=>{
+      console.log(res);
+    })
+    wx.showToast({
+      title: '成功',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    this.setData({
+      dataObj:app.globalData.dataObjBack
+    })
   },
 
   /**

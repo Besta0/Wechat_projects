@@ -71,7 +71,7 @@ Page({
           console.log("最新id："+app.globalData.user_id);
         }
        }
-       console.log("flag："+flag);
+       //console.log("flag："+flag);
       if(flag){
         console.log("登录成功");
         wx.showToast({

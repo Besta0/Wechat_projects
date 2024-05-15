@@ -10,13 +10,18 @@
   circular="true"
   >
     <swiper-item>
-    1
+      <view class="tt">收支对比-面积图</view>
+      <canvas canvas-id="areaCanvas"></canvas>
     </swiper-item>
     <swiper-item>
-    2
+      <view class="tt">收支对比-柱状图</view>
+      <canvas canvas-id="columnCanvas"></canvas>
     </swiper-item>
     <swiper-item>
-    3
+      <view class="tt">收支对比-折线图</view>
+      <canvas canvas-id="lineCanvas"></canvas>
     </swiper-item>
   </swiper>
+  <!-- <van-button round type="primary" color="#7232dd" class = "right" bind:tap="cal">刷新
+</van-button> -->
 </view>

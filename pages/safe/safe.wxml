@@ -1,0 +1,22 @@
+<view class="co" wx:if="{{us=='man'}}">
+  <view class="table">
+    <view class="row header-row">
+      <text class="header-cell">用户号</text>
+      <text class="header-cell">密码</text>
+      <text class="header-cell">状态</text>
+      <text class="header-cell">操作</text>
+    </view>
+    <view class="row" wx:for="{{ records }}" wx:key="index">
+      <text class="cell">{{ item.id }}</text>
+      <text class="cell">{{ item.password }}</text>
+      <text class="cell">正常</text>
+      <button class="cell" bind:tap="delbtn" data-iid="{{ item.id }}">删除</button>
+  </view>
+</view>
+</view>
+<view wx:else="">暂无权限访问</view>
+
+
+<!-- <van-cell title="展示弹出层" is-link bind:click="showPopup" />
+
+<van-popup show="{{ show }}" bind:close="onClose">内容</van-popup> -->

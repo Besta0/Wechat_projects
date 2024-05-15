@@ -48,7 +48,19 @@ Page({
   },
   //返回id测试
   backId:function (e) {
-    console.log(e.currentTarget.dataset.id);
+    //console.log(e.currentTarget.dataset.id);
+    //console.log(this.data.dataObj);
+    wx.redirectTo({
+      url: '/pages/modify/modify'
+    });
+    console.log(this.data.dataObj.length)
+    for(var i=0;i<this.data.dataObj.length;i++){
+      if(this.data.dataObj[i]._id==e.currentTarget.dataset.id){
+        app.globalData.dataObjBack=this.data.dataObj[i];
+        break;
+      }
+    }
+    //console.log(app.globalData.dataObjBack);//测试点击的数据信息
   },
 
 
@@ -70,7 +82,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    var p=0;//总支出
+    var g=0;//总收入
+    db.collection("bill").where({
+      year:this.data.date1[0]+this.data.date1[1]+this.data.date1[2]+this.data.date1[3],
+      month:this.data.date1[5]+this.data.date1[6],
+      user_id:app.globalData.user_id
+    }).get().then(res=>{
+      this.setData({
+        dataObj:res.data
+      }) 
+      console.log(this.data.dataObj);
+      //计算总收支
+      for(var i in res.data){
+        //console.log(res.data[i].money); 
+        if(res.data[i].type=="支出")
+        p+=Number(res.data[i].money);
+        else g+=Number(res.data[i].money);
+        //console.log(p);
+      }
+      this.setData({
+        pay_money:p,
+        get_money:g
+      })
+    })
   },
 
   /**
@@ -91,7 +126,30 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    var p=0;//总支出
+    var g=0;//总收入
+    db.collection("bill").where({
+      year:this.data.date1[0]+this.data.date1[1]+this.data.date1[2]+this.data.date1[3],
+      month:this.data.date1[5]+this.data.date1[6],
+      user_id:app.globalData.user_id
+    }).get().then(res=>{
+      this.setData({
+        dataObj:res.data
+      }) 
+      console.log(this.data.dataObj);
+      //计算总收支
+      for(var i in res.data){
+        //console.log(res.data[i].money); 
+        if(res.data[i].type=="支出")
+        p+=Number(res.data[i].money);
+        else g+=Number(res.data[i].money);
+        //console.log(p);
+      }
+      this.setData({
+        pay_money:p,
+        get_money:g
+      })
+    })
   },
 
   /**

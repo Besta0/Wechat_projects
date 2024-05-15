@@ -1,6 +1,10 @@
 {
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-popup": "@vant/weapp/popup/index"
   },
   "pages": [
     "pages/detail/detail",
@@ -10,7 +14,9 @@
     "pages/message/message",
     "pages/profile/profile",
     "pages/relocate/relocate",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/modify/modify",
+    "pages/safe/safe"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2CC2C3",

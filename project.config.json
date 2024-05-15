@@ -27,12 +27,14 @@
         "packageJsonPath": "./package.json",
         "miniprogramNpmDistDir": "./"
       }
-    ]
+    ],
+    "uglifyFileName": true
   },
   "condition": {},
   "editorSetting": {
     "tabIndent": "auto",
     "tabSize": 2
   },
-  "appid": "wxe13e1cd66673ff7e"
+  "appid": "wxe13e1cd66673ff7e",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }

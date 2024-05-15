@@ -1,7 +1,7 @@
 /* pages/graph/graph.wxss */
 page {
   height: 100vh;
-  background-color: #efefef !important;
+  background-color: #ffffff !important;
 }
 
 text {
@@ -10,17 +10,25 @@ text {
 // 轮播图样式
 .swiper{
   swiper{
-    height: 360rpx;
-    background-color: rgb(17, 97, 129);
+    height: 800rpx;
+    background-color: rgb(255, 255, 255);
 
     swiper-item{
       &:first-child{
-        background-color: slateblue;
+        background-color: rgb(255, 255, 255);
       }
       &:last-child{
-        background-color: slategray;
+        background-color: rgb(255, 255, 255);
       }
   }
 
   }
+}
+canvas{
+  width: 100%;
+  height: 800rpx;
+  display: flex;
+}
+.tt{
+  text-align: center;
 }

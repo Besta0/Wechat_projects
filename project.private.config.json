@@ -4,7 +4,8 @@
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false,
-    "bigPackageSizeSupport": true
+    "bigPackageSizeSupport": true,
+    "autoAudits": true
   },
   "libVersion": "3.3.3"
 }

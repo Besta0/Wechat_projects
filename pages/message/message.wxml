@@ -1,6 +1,8 @@
 <view class="container">
   <view class="header">
     <text class="title">月结表</text>
+    <van-button round type="primary" color="#7232dd" class = "right" bind:tap="cal">刷新
+</van-button>
   </view>
   <view class="table">
     <view class="row header-row">
@@ -15,7 +17,12 @@
       <text class="cell">{{ item.expense }}</text>
       <text class="cell">{{ item.balance }}</text>
     </view>
+    <view class="row" >
+      <text class="cell">总计</text>
+      <text class="cell">{{total1}}</text>
+      <text class="cell">{{total2}}</text>
+      <text class="cell">{{tobalance}}</text>
+    </view>
   </view>
 </view>
-<van-button type="danger">1
-</van-button>
+

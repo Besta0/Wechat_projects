@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "图表"
+  "navigationBarTitleText": "图表",
+  "enablePullDownRefresh": true
 }

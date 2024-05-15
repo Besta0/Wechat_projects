@@ -1,5 +1,7 @@
 
 // pages/profile/profile.js
+const db = wx.cloud.database();
+var app=getApp();
 Page({
 
   /**
@@ -7,27 +9,39 @@ Page({
    */
   data: {
     path:"/static/images/default.jpg",
-    name:"请登录",
+    name:'请登录',
     address:"点我授权"
   },
-  getUser:function(){
-    //wx.openSetting({});
-    var that=this;
-    //调用微信接口获取用户信息
-    wx.getUserInfo({
-      success:function(res){
-        //成功后
-        console.log("登录成功",res)
-        that.setData({
-          name:res.userInfo.nickName,
-          path:res.userInfo.avatarUrl
-        })
-      },
-      fail:function(res){
-        //失败后
-        console.log('登录失败',res)
-      }
+
+  out:function (){
+    this.setData({
+      name:'请登录',
     })
+    app.globalData.user_id='请登录'
+  },
+  
+  getUser:function(){
+    // //wx.openSetting({});
+    // var that=this;
+    // //调用微信接口获取用户信息
+    // wx.getUserInfo({
+    //   success:function(res){
+    //     //成功后
+    //     console.log("登录成功",res)
+    //     that.setData({
+    //       name:res.userInfo.nickName,
+    //       path:res.userInfo.avatarUrl
+    //     })
+    //   },
+    //   fail:function(res){
+    //     //失败后
+    //     console.log('登录失败',res)
+    //   }
+    // })
+    this.setData({
+      name:app.globalData.user_id,
+    })
+    app.globalData.user_id='请登录'
   },
 //获取地址
   getLocalPath:function(){
@@ -86,7 +100,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      name:app.globalData.user_id,
+    })
   },
 
   /**
@@ -100,7 +116,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    
   },
 
   /**
